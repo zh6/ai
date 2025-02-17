@@ -1,5 +1,5 @@
 <script setup>
-import { ChatDotRound, Picture, Microphone } from '@element-plus/icons-vue'
+import { ChatDotRound, Picture, Microphone, DataAnalysis, Document } from '@element-plus/icons-vue'
 import { ref, onMounted } from 'vue'
 
 const isLoaded = ref(false)
@@ -36,7 +36,15 @@ onMounted(() => {
             </el-menu-item>
             <el-menu-item index="/tts">
               <el-icon><Microphone /></el-icon>
-              <span class="menu-text">文字转语音</span>
+              <span>语音合成</span>
+            </el-menu-item>
+            <el-menu-item index="/sql">
+              <el-icon><DataAnalysis /></el-icon>
+              <span class="menu-text">SQL转换</span>
+            </el-menu-item>
+            <el-menu-item index="/knowledge">
+              <el-icon><Document /></el-icon>
+              <span>知识库问答</span>
             </el-menu-item>
           </el-menu>
         </div>

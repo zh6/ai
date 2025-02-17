@@ -51,3 +51,14 @@ export const sendMessage = async (message, onChunk) => {
     throw new Error('AI服务调用失败，请稍后重试')
   }
 }
+
+export const convertNL2SQL = async (query) => {
+  try {
+    const response = await axios.post(`${API_BASE_URL}/api/nl2sql`, {
+      query: query
+    });
+    return response.data;
+  } catch (error) {
+    throw new Error(error.response?.data?.error || '转换失败');
+  }
+};
